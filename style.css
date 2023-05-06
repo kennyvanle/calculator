@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    background: #87a1b2;
+    font-size: 16px;
+    font-family: helvetica, arial;
+}
+
+.calculator {
+    position: relative;
+    height: 671px;
+    width: 400px;
+    margin: 0.25em auto;
+    border-radius: 20px;
+    background: linear-gradient(to bottom, #045893, #1e435d);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.screen {
+    height: 60px;
+    width: 300px;
+    text-align: right;
+    font-size: 2.75em;
+    font-family: "Lucida Console", Monaco, monospace;
+    overflow: hidden;
+    white-space: nowrap;
+    background: linear-gradient(to right, #b2b6b5, #b3b7b9);
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+.logo {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.brand {
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #7ca9be;
+}
+
+.model {
+    font-size: 2.7em;
+    margin-left: 25px;
+    margin-right: 25px;
+    color: #cde9ef;
+}
+
+.solar {
+    height: 50px;
+    width: 175px;
+    border-radius: 2px;
+    background: linear-gradient(to right, #151e19, #313131);
+    align-self: start;
+    margin-left: 35px;
+}
+
+.line {
+    margin-top: 10px;
+    height: 2px;
+    width: 90%;
+    background: linear-gradient(to right, #151e19, #313131);
+    margin-bottom: 10px;
+}
+
+.container {
+    height: 400px;
+    width: 90%;
+    margin: 0.5em auto;
+    border: 2px solid #151e19;
+    border-radius: 6px;
+    display: flex;
+}
+
+.button {
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px 35px 30px 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-align: left;
+}
+
+.action {
+    background: linear-gradient(to bottom, #bf2318, #a01010);
+    color: #cde9ef;
+}
+
+.number {
+    background: linear-gradient(to bottom, #e7eaef, #cccdce);
+    color: #0559ad;
+}
+
+.left {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 40px;
+}
+
+#equals {
+    height: 120px;
+    padding: 5px 35px 90px 5px;
+}
