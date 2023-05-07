@@ -96,6 +96,10 @@ function root(a, b) {
     return Math.pow(a, 1/b);
 }
 
+function percentage(a, b) {
+    return a * b / 100;
+}
+
 
 function roundResult(number) {
     return Math.round(number * 1000) / 1000;
@@ -115,6 +119,8 @@ function operate(operator, a, b) {
             return divide(a, b);
         case '√':
             return root(a, b);
+        case '%':
+            return percentage(a, b);
         default:
             return null;
     }
