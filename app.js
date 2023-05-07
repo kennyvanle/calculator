@@ -38,6 +38,10 @@ function calculate() {
         alert('You cannot divide by 0!');
         clear();
         return;
+    } else if (currentOperation === '√' && screen.textContent < '0') {
+        alert('You cannot root a negative number!');
+        clear();
+        return;
     }
     secondNumber = screen.textContent;
     screen.textContent = roundResult(operate(currentOperation, firstNumber, secondNumber));
@@ -45,13 +49,16 @@ function calculate() {
 }
 
 function setOperation(operator) {
-    if (currentOperation !== null) {
+    if (operator === '+/-') {
+        screen.textContent = screen.textContent * -1;
+    } else if (currentOperation !== null) {
         calculate();
-    }
-    firstNumber = screen.textContent;
-    shouldResetScreen = true;
-    if (operator !== '=') {
-        currentOperation = operator;
+    } else {
+        firstNumber = screen.textContent;
+        shouldResetScreen = true;
+        if (operator !== '=') {
+            currentOperation = operator;
+        }
     }
 }
 
@@ -64,43 +71,51 @@ function clear() {
 }
 
 function resetScreen() {
-    screen.textContent = ''
+    screen.textContent = '';
 }
 
 function add(a, b) {
-    return a + b
+    return a + b;
 }
 
 function substract(a, b) {
-    return a - b
+    return a - b;
 }
 
 function multiply(a, b) {
-    return a * b
+    return a * b;
 }
 
 function divide(a, b) {
-    if (b === 0) return null
-    return a / b
+    if (b === 0) return null;
+    return a / b;
 }
 
+function root(a, b) {
+    if (a < 0) return null;
+    return Math.pow(a, 1/b);
+}
+
+
 function roundResult(number) {
-    return Math.round(number * 1000) / 1000
-  }
+    return Math.round(number * 1000) / 1000;
+}
 
 function operate(operator, a, b) {
-    a = Number(a)
-    b = Number(b)
+    a = Number(a);
+    b = Number(b);
     switch (operator) {
         case '+':
-            return add(a, b)
+            return add(a, b);
         case '-':
-            return substract(a, b)
+            return substract(a, b);
         case 'x':
-            return multiply(a, b)
+            return multiply(a, b);
         case '÷':
-            return divide(a, b)
+            return divide(a, b);
+        case '√':
+            return root(a, b);
         default:
-            return null
+            return null;
     }
 }
