@@ -92,7 +92,7 @@ body {
     text-align: left;
 }
 
-.action {
+.action, .memory {
     background: linear-gradient(to bottom, #bf2318, #a01010);
     color: #cde9ef;
 }
